@@ -1,0 +1,39 @@
+######### variables to be used
+@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjEiLCJmaXJzdE5hbWUiOiJIYXJzaGFsIiwibGFzdE5hbWUiOiJQYXRpbCIsImVtYWlsIjoiaGFyc2hhbEBnbWFpbC5jb20iLCJpYXQiOjE2MDM1NDAzMDgsImV4cCI6MTYwNDE0NTEwOCwidXNlclR5cGUiOiIxIiwidXNlclN0YXR1cyI6IjEiLCJpbnZpdGVkQnkiOiIxIiwiaW52aXRlZE9uIjoiMjAyMC0wOS0yOCAxMjoxMTo0OSIsImVtYWlsVmVyaWZpZWQiOiIxIiwiZW1haWxWZXJpZmllZE9uIjoiMjAyMC0wOS0yOCAxMjowOTo0MSIsImFkZGVkQnkiOiIxIiwiYWRkZWRPbiI6IjIwMjAtMDktMjggMTI6MDQ6MjAifQ.TRMrIohV4ZBBbUREVsS9lK4GRIBz2RzWDTNklqH77VU
+
+@contentType = application/json
+
+##################### fetch all users
+GET http://localhost/advidsapp/index.php/user/fetch-Alluser HTTP/1.1
+auth:{{token}}
+
+########################### 
+// Login API
+
+POST http://localhost/advidsapp/index.php/user/login HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+email=harshal@gmail.com
+&password=prad1538
+
+################################
+// Fetch exst user data
+
+GET http://localhost/advidsapp/index.php/user/existuser HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+auth:{{token}}
+
+userName=harshal
+##############################
+
+PUT http://localhost/advidsapp/index.php/user/edit-userType/7 HTTP/1.1
+Content-Type: {{contentType}}
+auth:{{token}}
+
+{
+    "userType":"HP"
+}
+
+
+############
+GET url HTTP/1.1
